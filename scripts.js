@@ -35,11 +35,18 @@ var products = [
         'variant': 'Yellow'
     },
 ];
+console.log('Products Array:', products);
+
+var visible = document.getElementById('visibleId');
+visible.textContent = "Products Array Object Here" + "\n" + JSON.stringify(products, 0, 2);
+
+var data = document.getElementById('data');
+data.addEventListener('click', () => {
+    visible.textContent = "Products Array Object Here" + "\n" + JSON.stringify(products, 0, 2);
+});
 
 var dynamicArray = [];
-var visible = document.getElementById('visibleId');
 var showId = document.getElementById('btn');
-
 showId.addEventListener('click', function () {
     for (var i = 0; i < products.length; i++) {
         var newProduct = {
@@ -49,5 +56,5 @@ showId.addEventListener('click', function () {
         dynamicArray.push(newProduct);
         console.log(newProduct);
     }
-    visible.textContent = JSON.stringify(dynamicArray, 0, 4); 
+    visible.textContent = "Googel Ads Remarketing Array\n" + JSON.stringify(dynamicArray, 0, 4); 
 });
